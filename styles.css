@@ -1,0 +1,976 @@
+/* styles.css for BrightSide News */
+
+/* --- CSS Variables --- */
+:root {
+    --font-primary: 'Poppins', sans-serif;
+    --font-secondary: 'Open Sans', sans-serif;
+
+    --color-primary: #2A7AAF; /* Trustworthy Blue */
+    --color-primary-dark: #1E527A;
+    --color-secondary: #F39C12; /* Warm Accent for CTAs */
+    --color-secondary-dark: #D48806;
+    --color-accent: #f1c40f; /* Bright Yellow for Tagline/Highlights */
+    --color-text: #343a40; /* Dark Grey for Primary Text */
+    --color-text-light: #6c757d; /* Lighter Grey for Secondary Text */
+    --color-background: #ffffff;
+    --color-background-alt: #f8f9fa;
+    --color-border: #dee2e6;
+    --color-error: #dc3545;
+    --color-success: #28a745;
+
+    --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.05);
+    --shadow-md: 0 5px 15px rgba(0, 0, 0, 0.1);
+    --shadow-lg: 0 10px 30px rgba(0, 0, 0, 0.15);
+
+    --border-radius: 8px;
+    --container-width: 1140px;
+    --navbar-height: 70px; /* Matches JS constant */
+    --transition-speed: 0.3s;
+}
+
+/* --- Global Reset & Base Styles --- */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth; /* Fallback if JS smooth scroll fails */
+    font-size: 16px; /* Base font size */
+}
+
+body {
+    font-family: var(--font-secondary);
+    color: var(--color-text);
+    background-color: var(--color-background);
+    line-height: 1.7;
+    overflow-x: hidden; /* Prevent horizontal scroll */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+body.no-scroll {
+    overflow-y: hidden; /* For mobile menu open */
+}
+body.no-scroll-modal {
+    overflow-y: hidden; /* For modal open */
+}
+
+
+/* --- Typography --- */
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-primary);
+    font-weight: 700;
+    color: var(--color-primary-dark);
+    line-height: 1.3;
+    margin-bottom: 0.75em;
+}
+
+h1 { font-size: 2.8rem; }
+h2 { font-size: 2.2rem; margin-bottom: 1.5em; } /* Section titles */
+h3 { font-size: 1.6rem; }
+h4 { font-size: 1.2rem; }
+
+p {
+    margin-bottom: 1rem;
+}
+
+a {
+    color: var(--color-primary);
+    text-decoration: none;
+    transition: color var(--transition-speed) ease;
+}
+
+a:hover, a:focus {
+    color: var(--color-primary-dark);
+    text-decoration: underline;
+}
+
+/* Focus visible for keyboard navigation */
+*:focus-visible {
+    outline: 3px solid var(--color-secondary);
+    outline-offset: 2px;
+    border-radius: var(--border-radius);
+}
+/* Remove outline for mouse users if not also keyboard focused */
+*:focus:not(:focus-visible) {
+    outline: none;
+}
+
+
+/* --- Layout --- */
+.container {
+    width: 90%;
+    max-width: var(--container-width);
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+.py-section {
+    padding-top: 60px;
+    padding-bottom: 60px;
+}
+
+.alt-bg {
+    background-color: var(--color-background-alt);
+}
+
+.text-center {
+    text-align: center;
+}
+
+.grid-3-col {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+}
+.gap-medium { gap: 30px; }
+.gap-large { gap: 45px; }
+
+
+/* --- Navigation Bar --- */
+.navbar {
+    background-color: var(--color-background);
+    box-shadow: var(--shadow-sm);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    height: var(--navbar-height);
+    transition: background-color var(--transition-speed) ease;
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+}
+
+.logo {
+    font-family: var(--font-primary);
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--color-primary);
+    text-decoration: none;
+}
+.logo:hover, .logo:focus {
+    color: var(--color-primary-dark);
+    text-decoration: none;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    align-items: center;
+}
+
+.nav-links li {
+    margin-left: 25px;
+}
+
+.nav-link {
+    font-family: var(--font-primary);
+    font-weight: 600;
+    font-size: 1rem;
+    color: var(--color-text);
+    text-decoration: none;
+    padding: 8px 0;
+    position: relative;
+    transition: color var(--transition-speed) ease;
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: var(--color-secondary);
+    transition: width var(--transition-speed) ease;
+}
+
+.nav-link:hover,
+.nav-link:focus,
+.nav-link.active {
+    color: var(--color-primary);
+    text-decoration: none;
+}
+.nav-link:hover::after,
+.nav-link:focus::after,
+.nav-link.active::after {
+    width: 100%;
+}
+
+.contact-nav-button {
+    background-color: var(--color-secondary);
+    color: var(--color-background);
+    padding: 10px 20px;
+    border-radius: var(--border-radius);
+    font-weight: 600;
+    transition: background-color var(--transition-speed) ease, transform var(--transition-speed) ease;
+}
+.contact-nav-button:hover, .contact-nav-button:focus {
+    background-color: var(--color-secondary-dark);
+    color: var(--color-background);
+    transform: translateY(-2px);
+    text-decoration: none;
+}
+.contact-nav-button::after { display: none; } /* No underline for button-style link */
+
+.nav-toggle {
+    display: none; /* Hidden on desktop */
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+    z-index: 1001; /* Above nav menu */
+}
+
+.hamburger-icon {
+    display: block;
+    width: 25px;
+    height: 3px;
+    background-color: var(--color-primary);
+    position: relative;
+    transition: transform var(--transition-speed) ease, background-color var(--transition-speed) ease;
+}
+
+.hamburger-icon::before,
+.hamburger-icon::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background-color: var(--color-primary);
+    transition: transform var(--transition-speed) ease, top var(--transition-speed) ease, bottom var(--transition-speed) ease;
+}
+
+.hamburger-icon::before { top: -8px; }
+.hamburger-icon::after { bottom: -8px; }
+
+/* Mobile Menu Active State (Burger to X) */
+.nav-toggle.active .hamburger-icon {
+    background-color: transparent; /* Middle bar disappears */
+}
+.nav-toggle.active .hamburger-icon::before {
+    transform: rotate(45deg);
+    top: 0;
+}
+.nav-toggle.active .hamburger-icon::after {
+    transform: rotate(-45deg);
+    bottom: 0;
+}
+
+/* --- Hero Section --- */
+.hero-section {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    color: var(--color-background); /* Default text color for hero content */
+    text-align: center;
+    padding: 100px 0; /* Padding for content if viewport is small */
+    
+    /* Background properties - Fallback if JS interactive background fails */
+    background-color: var(--color-primary-dark);
+    /* background-image: url('https://placehold.co/1920x1080/455A64/FFFFFF?text=Uplifting+Hero+Background+1'); */ /* Moved to #hero-interactive-background */
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    overflow: hidden; /* Contain the moving background */
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Dark overlay for text contrast */
+    z-index: 1;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+}
+
+.hero-section h1 {
+    font-size: 3.5rem;
+    color: var(--color-background); /* Explicitly white for h1 */
+    margin-bottom: 0.5em;
+}
+
+.tagline {
+    font-size: 1.8rem;
+    color: var(--color-accent); /* Bright yellow for tagline */
+    font-weight: 600;
+    margin-bottom: 1em;
+    min-height: 2.2em; /* To prevent layout shift during text change */
+}
+#dynamic-tagline-text {
+    transition: opacity 0.5s ease-in-out;
+}
+
+.intro-paragraph {
+    font-size: 1.1rem;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 2em;
+    color: rgba(255, 255, 255, 0.9); /* Light color for intro paragraph */
+}
+
+.cta-button {
+    display: inline-block;
+    background-color: var(--color-secondary);
+    color: var(--color-background);
+    padding: 15px 35px;
+    font-family: var(--font-primary);
+    font-size: 1.1rem;
+    font-weight: 600;
+    border-radius: var(--border-radius);
+    text-decoration: none;
+    transition: background-color var(--transition-speed) ease, transform var(--transition-speed) ease;
+    box-shadow: var(--shadow-sm);
+}
+.cta-button:hover, .cta-button:focus {
+    background-color: var(--color-secondary-dark);
+    color: var(--color-background);
+    transform: translateY(-3px) scale(1.03);
+    text-decoration: none;
+    box-shadow: var(--shadow-md);
+}
+
+/* --- Section Titles --- */
+.section-title {
+    margin-bottom: 1.5em;
+    position: relative;
+    padding-bottom: 15px;
+}
+.section-title::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 4px;
+    background-color: var(--color-primary);
+    border-radius: 2px;
+}
+
+/* --- About Section --- */
+.about-card {
+    background-color: var(--color-background);
+    padding: 25px;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow-sm);
+    transition: transform var(--transition-speed) ease, box-shadow var(--transition-speed) ease;
+}
+.about-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-md);
+}
+.about-card h3 {
+    color: var(--color-primary);
+    margin-bottom: 0.5em;
+}
+
+/* --- How It Works Section --- */
+.step-card {
+    background-color: var(--color-background);
+    padding: 30px;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow-sm);
+    transition: transform var(--transition-speed) ease, box-shadow var(--transition-speed) ease;
+}
+.step-card:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--shadow-md);
+}
+.step-icon {
+    font-size: 3rem;
+    margin-bottom: 0.5em;
+    color: var(--color-secondary);
+}
+.step-card h3 {
+    color: var(--color-primary-dark);
+    margin-bottom: 0.5em;
+}
+
+/* --- News Examples Section --- */
+.news-card {
+    background-color: var(--color-background);
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow-sm);
+    overflow: hidden;
+    transition: transform var(--transition-speed) ease, box-shadow var(--transition-speed) ease;
+    display: flex;
+    flex-direction: column;
+    position: relative; /* Added for shine effect */
+}
+.news-card:hover {
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: var(--shadow-md);
+}
+.news-card img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    display: block;
+}
+.news-card-content {
+    padding: 20px;
+    flex-grow: 1; /* Ensure content area takes available space */
+}
+.news-card-content h4 {
+    color: var(--color-primary);
+    margin-bottom: 0.5em;
+}
+
+/* --- Testimonials Section --- */
+.testimonial-card {
+    background-color: var(--color-background);
+    padding: 25px;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow-sm);
+    border-left: 5px solid var(--color-secondary);
+    transition: transform var(--transition-speed) ease, box-shadow var(--transition-speed) ease;
+}
+.testimonial-card:hover {
+    transform: scale(1.03);
+    box-shadow: var(--shadow-md);
+}
+.testimonial-card .quote {
+    font-style: italic;
+    color: var(--color-text-light);
+    margin-bottom: 1em;
+    position: relative;
+    padding-left: 20px;
+}
+.testimonial-card .quote::before {
+    content: '“';
+    font-size: 2.5rem;
+    color: var(--color-secondary);
+    position: absolute;
+    left: -10px;
+    top: -10px;
+    font-family: Georgia, serif;
+}
+.testimonial-card .author {
+    font-weight: 600;
+    color: var(--color-primary-dark);
+    text-align: right;
+}
+
+/* --- Sign Up Section & Forms --- */
+.signup-form {
+    max-width: 600px;
+    margin: 30px auto 0;
+    background-color: var(--color-background-alt);
+    padding: 30px;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow-sm);
+}
+#signup.py-section .container > p { /* Targeting the intro P in signup section */
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+    color: var(--color-text-light);
+}
+
+.form-group {
+    margin-bottom: 20px;
+    text-align: left;
+}
+.form-group label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 8px;
+    color: var(--color-primary-dark);
+}
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid var(--color-border);
+    border-radius: var(--border-radius);
+    font-family: var(--font-secondary);
+    font-size: 1rem;
+    transition: border-color var(--transition-speed) ease, box-shadow var(--transition-speed) ease;
+}
+.form-group input[type="text"]:focus,
+.form-group input[type="email"]:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    border-color: var(--color-primary);
+    box-shadow: 0 0 0 3px rgba(42, 122, 175, 0.25); /* Using RGB values for --color-primary with opacity */
+    outline: none; /* Handled by focus-visible */
+}
+.form-group.error input,
+.form-group.error select,
+.form-group.error textarea {
+    border-color: var(--color-error);
+}
+.form-error-message {
+    display: block;
+    color: var(--color-error);
+    font-size: 0.875rem;
+    margin-top: 5px;
+}
+.form-feedback-message {
+    margin-top: 15px;
+    font-weight: 600;
+}
+.form-feedback-message.success { color: var(--color-success); }
+.form-feedback-message.error { color: var(--color-error); }
+
+.submit-button {
+    display: inline-block;
+    background-color: var(--color-secondary);
+    color: var(--color-background);
+    padding: 12px 30px;
+    font-family: var(--font-primary);
+    font-size: 1.1rem;
+    font-weight: 600;
+    border-radius: var(--border-radius);
+    border: none;
+    cursor: pointer;
+    transition: background-color var(--transition-speed) ease, transform var(--transition-speed) ease;
+    box-shadow: var(--shadow-sm);
+}
+.submit-button:hover, .submit-button:focus {
+    background-color: var(--color-secondary-dark);
+    transform: translateY(-2px);
+}
+.privacy-note {
+    font-size: 0.9rem;
+    color: var(--color-text-light);
+    margin-top: 15px;
+}
+
+/* --- Footer --- */
+.site-footer {
+    background-color: var(--color-primary-dark);
+    color: rgba(255, 255, 255, 0.8);
+    padding: 50px 0 20px;
+}
+.footer-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    margin-bottom: 30px;
+}
+.footer-column h4 {
+    color: var(--color-background);
+    margin-bottom: 15px;
+    font-size: 1.3rem;
+}
+.footer-column p {
+    margin-bottom: 10px;
+    font-size: 0.95rem;
+}
+.footer-column ul {
+    list-style: none;
+}
+.footer-column ul li {
+    margin-bottom: 8px;
+}
+.footer-column ul li a {
+    color: rgba(255, 255, 255, 0.8);
+    text-decoration: none;
+}
+.footer-column ul li a:hover, .footer-column ul li a:focus {
+    color: var(--color-background);
+    text-decoration: underline;
+}
+.cta-button-secondary { /* For footer contact button */
+    background-color: var(--color-secondary);
+    color: var(--color-background);
+    padding: 10px 20px;
+    border-radius: var(--border-radius);
+    font-weight: 600;
+    border: none;
+    cursor: pointer;
+    transition: background-color var(--transition-speed) ease, transform var(--transition-speed) ease;
+}
+.cta-button-secondary:hover, .cta-button-secondary:focus {
+    background-color: var(--color-secondary-dark);
+    transform: translateY(-2px);
+}
+
+.social-links a {
+    display: inline-block;
+    margin-right: 15px;
+    color: var(--color-background); /* White icons */
+    transition: transform var(--transition-speed) ease, color var(--transition-speed) ease;
+}
+.social-links a:hover, .social-links a:focus {
+    transform: scale(1.2);
+    color: var(--color-accent); /* Highlight on hover */
+    text-decoration: none;
+}
+.social-links svg {
+    width: 24px;
+    height: 24px;
+    fill: currentColor;
+}
+.footer-bottom {
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+    padding-top: 20px;
+    font-size: 0.9rem;
+}
+
+/* --- Modal --- */
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6); /* Semi-transparent overlay */
+    display: none; /* Hidden by default, JS toggles to flex */
+    align-items: center;
+    justify-content: center;
+    z-index: 2000;
+    opacity: 0;
+    transition: opacity var(--transition-speed) ease-in-out;
+}
+.modal.visible {
+    opacity: 1;
+}
+.modal-overlay { /* Clickable overlay to close */
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+}
+.modal-content {
+    background-color: var(--color-background);
+    padding: 30px 40px;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow-lg);
+    width: 90%;
+    max-width: 550px;
+    position: relative; /* For close button positioning */
+    z-index: 2001; /* Above overlay */
+    transform: scale(0.95);
+    transition: transform var(--transition-speed) ease-in-out;
+}
+.modal.visible .modal-content {
+    transform: scale(1);
+}
+.modal-title {
+    margin-top: 0;
+    color: var(--color-primary-dark);
+    text-align: center;
+}
+.modal-close {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: none;
+    border: none;
+    font-size: 2rem;
+    color: var(--color-text-light);
+    cursor: pointer;
+    line-height: 1;
+    padding: 5px;
+    transition: color var(--transition-speed) ease;
+}
+.modal-close:hover, .modal-close:focus {
+    color: var(--color-text);
+}
+.modal #contact-form { /* Modal form specific styling if needed */
+    margin-top: 20px;
+}
+.alternative-contact {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 0.9rem;
+    color: var(--color-text-light);
+}
+.alternative-contact a {
+    color: var(--color-primary);
+    font-weight: 600;
+}
+
+/* --- Scroll-Reveal Animations --- */
+.scroll-reveal,
+.scroll-reveal-item {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+.scroll-reveal.is-visible,
+.scroll-reveal-item.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+/* Example for different types of reveal, can be expanded */
+.scroll-reveal-item[data-animation="fade-in"] { transform: translateY(0); }
+.scroll-reveal-item[data-animation="slide-up"] { transform: translateY(50px); }
+.scroll-reveal-item[data-animation="scale-up"] { transform: scale(0.9); }
+
+.scroll-reveal-item[data-animation="scale-up"].is-visible { transform: scale(1); }
+
+
+/* --- Responsive Design --- */
+
+/* Tablets and larger mobiles (e.g., landscape) */
+@media (max-width: 992px) {
+    h1 { font-size: 2.5rem; }
+    .hero-section h1 { font-size: 3rem; }
+    h2 { font-size: 2rem; }
+    .py-section { padding-top: 50px; padding-bottom: 50px; }
+    .grid-3-col { grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); }
+}
+
+
+/* Mobile devices (up to 768px) */
+@media (max-width: 768px) {
+    :root { --navbar-height: 60px; }
+    html { font-size: 15px; }
+
+    .nav-toggle {
+        display: block; /* Show hamburger */
+    }
+    .nav-menu-container {
+        position: fixed;
+        top: var(--navbar-height);
+        left: 0;
+        width: 100%;
+        height: calc(100vh - var(--navbar-height));
+        background-color: var(--color-background);
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start; /* Align items to top */
+        padding-top: 30px;
+        transform: translateX(100%);
+        transition: transform var(--transition-speed) ease-in-out;
+        box-shadow: var(--shadow-md);
+        overflow-y: auto; /* Allow scrolling if many links */
+    }
+    .nav-menu-container.active {
+        transform: translateX(0);
+    }
+    .navbar.menu-open { /* Optional: style navbar when menu is open */
+        /* background-color: var(--color-primary-dark); */
+    }
+    .nav-links {
+        flex-direction: column;
+        width: 100%;
+    }
+    .nav-links li {
+        margin: 0;
+        width: 100%;
+        text-align: center;
+    }
+    .nav-link {
+        display: block;
+        padding: 15px 20px;
+        font-size: 1.2rem;
+        border-bottom: 1px solid var(--color-border);
+        width: 100%;
+    }
+    .nav-link::after { display: none; } /* No underline for mobile links */
+    .nav-link.active {
+        background-color: var(--color-background-alt);
+        color: var(--color-primary);
+    }
+    .contact-nav-button { /* Make it full width or distinct in mobile menu */
+        margin-top: 20px;
+        padding: 15px 25px;
+        width: auto; /* Or 80% and margin auto for centering */
+    }
+
+
+    h1 { font-size: 2.2rem; }
+    .hero-section h1 { font-size: 2.5rem; }
+    .tagline { font-size: 1.5rem; }
+    h2 { font-size: 1.8rem; }
+
+    .grid-3-col {
+        grid-template-columns: 1fr; /* Stack columns */
+    }
+    .gap-medium, .gap-large { gap: 25px; }
+
+    .footer-content {
+        grid-template-columns: 1fr; /* Stack footer columns */
+        text-align: center;
+    }
+    .footer-column ul { padding-left: 0; }
+    .social-links { text-align: center; }
+    .social-links a { margin: 0 10px; }
+
+    .modal-content {
+        width: 95%;
+        padding: 25px;
+    }
+    .signup-form {
+        padding: 20px;
+    }
+}
+
+/* Smaller mobile devices */
+@media (max-width: 480px) {
+    html { font-size: 14px; }
+    h1 { font-size: 2rem; }
+    .hero-section h1 { font-size: 2.2rem; }
+    .tagline { font-size: 1.3rem; }
+    .intro-paragraph { font-size: 1rem; }
+    .cta-button, .submit-button {
+        padding: 12px 25px;
+        font-size: 1rem;
+    }
+    .py-section { padding-top: 40px; padding-bottom: 40px; }
+}
+
+/* --- Custom JavaScript Feature Styles --- */
+
+/* 1. Interactive Hero Background */
+#hero-interactive-background {
+    position: absolute;
+    top: -10%; /* Allows movement without showing edges */
+    left: -10%;
+    width: 120%;
+    height: 120%;
+    background-image: url('https://placehold.co/1920x1080/455A64/FFFFFF?text=Uplifting+Hero+Background+1'); /* TODO: Replace with actual high-quality image */
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    z-index: 0; /* Behind hero-overlay which is z-index 1 */
+    transition: transform 0.2s cubic-bezier(0.25, 0.46, 0.45, 0.94); /* Smooth transition for mouse move and parallax */
+    will-change: transform; /* Performance hint for animations */
+}
+
+/* 2. Good News Counter */
+#good-news-counter-container {
+    display: inline; /* Or block if it's its own paragraph */
+}
+#good-news-counter {
+    font-weight: bold;
+    color: var(--color-secondary);
+    /* You can add more specific styling if needed, e.g., font-size */
+}
+
+/* 3. Subtle "Shine/Gloss" Effect on News Card Hover */
+/* .news-card is already position: relative; overflow: hidden; */
+.news-card::after { /* This selector was already in the original styles.css for nav-link, ensure no conflict or use more specific if needed */
+    content: '';
+    position: absolute;
+    top: -10%; /* Start slightly above and make taller for better diagonal */
+    left: -110%; /* Start off-screen to the left */
+    width: 75%;
+    height: 120%;
+    background: linear-gradient(
+        100deg,
+        rgba(255, 255, 255, 0) 20%,
+        rgba(255, 255, 255, 0.25) 50%, /* Subtle white shine */
+        rgba(255, 255, 255, 0) 80%
+    );
+    transform: skewX(-25deg); /* Angled shine */
+    transition: left 0.65s ease-in-out; /* Smooth transition for shine */
+    pointer-events: none; /* So it doesn't interfere with card interactions */
+    z-index: 1; /* Above card content if any absolute elements are there */
+}
+.news-card.shine-effect::after {
+    left: 135%; /* Move across and off-screen to the right */
+}
+/* If .nav-link::after was the one intended to be cleared above, this specification is fine. */
+/* If .news-card had its own ::after for other purposes, then this would override it. */
+/* Assuming .news-card did not have an ::after, this is fine. */
+
+
+/* 4. Dynamic "Progress Bar" for Page Scroll */
+#scroll-progress-bar {
+    position: fixed;
+    top: var(--navbar-height); /* Position below the fixed navbar */
+    left: 0;
+    width: 0%; /* Initial width */
+    height: 4px;
+    background-color: var(--color-secondary);
+    z-index: 1001; /* Above navbar (1000) but below modal (2000) & custom cursor (10001) */
+    transition: width 0.08s linear; /* Smooth width changes */
+}
+/* Adjust top position for mobile navbar height */
+@media (max-width: 768px) {
+    #scroll-progress-bar {
+        top: 60px; /* Matches mobile --navbar-height from provided CSS */
+    }
+}
+
+/* 5. Interactive "Follow Cursor" Dot/Element */
+#custom-cursor {
+    position: fixed;
+    width: 12px; /* Adjusted size */
+    height: 12px; /* Adjusted size */
+    background-color: var(--color-accent);
+    border-radius: 50%;
+    pointer-events: none;
+    left: 0; /* Will be offset by transform to center on cursor */
+    top: 0;  /* Will be offset by transform to center on cursor */
+    z-index: 10001; /* Above most elements */
+    opacity: 0.8;
+    /* mix-blend-mode: difference; Optional: cool effect on some backgrounds, test thoroughly */
+    transition: transform 0.07s cubic-bezier(0.175, 0.885, 0.32, 1.275), /* Fast follow */
+                width 0.25s ease-in-out,
+                height 0.25s ease-in-out,
+                opacity 0.25s ease-in-out,
+                background-color 0.25s ease-in-out;
+    will-change: transform, width, height, opacity; /* Performance hint */
+}
+
+#custom-cursor.cursor-active {
+    width: 28px; /* Larger when active */
+    height: 28px;
+    opacity: 0.5;
+    background-color: var(--color-secondary);
+}
+
+/* Consider accessibility: avoid hiding system cursor unless thoroughly tested.
+body.custom-cursor-active {
+    cursor: none;
+}
+a:hover, button:hover, [data-modal-trigger]:hover, .news-card:hover {
+    cursor: none;
+}
+*/
+
+/* 6. "Confetti" on Successful Sign-Up */
+.confetti-particle {
+    position: fixed; /* Use fixed to be relative to viewport, easier for burst effect */
+    width: 10px;
+    height: 10px;
+    opacity: 1;
+    pointer-events: none;
+    z-index: 9999; /* High z-index */
+    will-change: transform, opacity; /* Performance hint for animations */
+    /* JS will set background-color, left, top, transform, and animation */
+}
+
+/* Example: Different shapes for confetti */
+.confetti-particle.rectangle {
+    width: 8px;
+    height: 15px;
+    border-radius: 2px;
+}
+.confetti-particle.circle {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+}

@@ -1,0 +1,868 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BrightSide News - Your Daily Dose of Positivity</title>
+    <meta name="description" content="BrightSide News delivers uplifting and positive news stories to brighten your day. Join us and start your day on a positive note!">
+
+    <link rel="icon" href="favicon.ico"> <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="styles.css">
+
+    <style>
+      .visually-hidden {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        margin: -1px;
+        padding: 0;
+        overflow: hidden;
+        clip: rect(0, 0, 0, 0);
+        border: 0;
+      }
+    </style>
+</head>
+<body>
+
+    <header class="navbar scroll-reveal" id="main-nav">
+        <div class="container nav-container">
+            <a href="#home" class="logo">BrightSide News</a>
+            <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false" aria-controls="nav-menu">
+                <span class="hamburger-icon"></span>
+            </button>
+            <nav class="nav-menu-container" id="nav-menu">
+                <ul class="nav-links">
+                    <li><a href="#home" class="nav-link active">Home</a></li>
+                    <li><a href="#about" class="nav-link">About</a></li>
+                    <li><a href="#how-it-works" class="nav-link">How It Works</a></li>
+                    <li><a href="#examples" class="nav-link">News Examples</a></li>
+                    <li><a href="#testimonials" class="nav-link">Testimonials</a></li>
+                    <li><a href="#signup" class="nav-link">Sign Up</a></li>
+                    <li><a href="#contactModal" class="nav-link contact-nav-button" data-modal-trigger="contactModal">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <div id="scroll-progress-bar"></div> <!-- << NEW HTML: SCROLL PROGRESS BAR -->
+
+    <main>
+        <section id="home" class="hero-section">
+            <div id="hero-interactive-background"></div> <!-- << NEW HTML: HERO INTERACTIVE BACKGROUND -->
+            <div class="hero-overlay"></div>
+            <div class="container hero-content text-center">
+                <h1 class="scroll-reveal-item" data-delay="100">Welcome to BrightSide News</h1>
+                <p class="tagline scroll-reveal-item" data-delay="300">
+                    <span id="dynamic-tagline-text">Start Your Day Bright</span>
+                </p>
+                <p class="intro-paragraph scroll-reveal-item" data-delay="500">
+                    Discover a daily stream of positive stories, uplifting news, and inspiring content designed to make your world a little brighter.
+                </p>
+                <a href="#signup" class="cta-button scroll-reveal-item" data-delay="700">Get Your Daily BrightSide!</a>
+            </div>
+        </section>
+
+        <section id="about" class="py-section">
+            <div class="container">
+                <h2 class="section-title text-center scroll-reveal">Why BrightSide News?</h2>
+                <div class="grid-3-col gap-large scroll-reveal" data-delay="200">
+                    <div class="about-card scroll-reveal-item" data-delay="300">
+                        <h3>Our Mission</h3>
+                        <p>To curate and deliver genuinely positive news that inspires, motivates, and reminds us of the good in the world. We believe in the power of positivity to transform perspectives and uplift communities.</p>
+                    </div>
+                    <div class="about-card scroll-reveal-item" data-delay="500">
+                        <h3>The Need for Positivity</h3>
+                        <p>In a world often dominated by challenging headlines, BrightSide News offers a refreshing alternative. We focus on solutions, kindness, and progress, providing a balanced view of current events. We donate 50% of our profits to charity!</p>
+                    </div>
+                    <div class="about-card scroll-reveal-item" data-delay="700">
+                        <h3>Our Solution & Future Vision</h3>
+                        <!-- MODIFIED HTML for Good News Counter -->
+                        <p>Through carefully selected stories and a commitment to quality, we aim to be your trusted source for daily good news. <span id="good-news-counter-container">We've shared <span id="good-news-counter" data-target-value="1287">0</span> pieces of good news!</span> We envision a future where positive storytelling is a mainstream part of media consumption.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="how-it-works" class="py-section alt-bg">
+            <div class="container">
+                <h2 class="section-title text-center scroll-reveal">How It Works</h2>
+                <div class="grid-3-col gap-medium scroll-reveal" data-delay="200">
+                    <div class="step-card text-center scroll-reveal-item" data-delay="300">
+                        <div class="step-icon">✉️</div>
+                        <h3>1. Sign Up Free</h3>
+                        <p>Join our community with a quick and easy sign-up. It's completely free to receive your dose of positive news.</p>
+                    </div>
+                    <div class="step-card text-center scroll-reveal-item" data-delay="500">
+                        <div class="step-icon">📰</div>
+                        <h3>2. Receive Good News</h3>
+                        <p>Get handpicked positive stories delivered to you. We filter out the negativity, so you don't have to.</p>
+                    </div>
+                    <div class="step-card text-center scroll-reveal-item" data-delay="700">
+                        <div class="step-icon">🌟</div>
+                        <h3>3. Feel Inspired</h3>
+                        <p>Start your day with a brighter outlook. Share the positivity and make a difference in your own way.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="examples" class="py-section">
+            <div class="container">
+                <h2 class="section-title text-center scroll-reveal">Examples of BrightSide Stories</h2>
+                <div class="grid-3-col gap-medium scroll-reveal" data-delay="200">
+                    <div class="news-card scroll-reveal-item" data-delay="300">
+                        <img src="https://placehold.co/600x400/2A7AAF/FFFFFF?text=Community+Project" alt="People working together on a community project" loading="lazy">
+                        <div class="news-card-content">
+                            <h4>Community Unites for Park Cleanup</h4>
+                            <p>Volunteers from all walks of life joined forces last weekend to revitalize a local park, planting trees and creating a vibrant green space for everyone to enjoy.</p>
+                        </div>
+                    </div>
+                    <div class="news-card scroll-reveal-item" data-delay="500">
+                        <img src="https://placehold.co/600x400/F39C12/343a40?text=Innovation+Solar" alt="Innovative solar panel technology" loading="lazy">
+                        <div class="news-card-content">
+                            <h4>Students Develop Low-Cost Water Filter</h4>
+                            <p>A team of university students has designed an innovative, affordable water filtration system aimed at providing clean drinking water to remote communities.</p>
+                        </div>
+                    </div>
+                    <div class="news-card scroll-reveal-item" data-delay="700">
+                        <img src="https://placehold.co/600x400/f1c40f/343a40?text=Local+Hero+Rescue" alt="Firefighter rescuing a cat from a tree" loading="lazy">
+                        <div class="news-card-content">
+                            <h4>Local Hero Rescues Stranded Hikers</h4>
+                            <p>An off-duty firefighter's quick thinking and bravery led to the successful rescue of two hikers stranded on a remote trail during a sudden storm.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="testimonials" class="py-section alt-bg">
+            <div class="container">
+                <h2 class="section-title text-center scroll-reveal">What Our Readers Say</h2>
+                <div class="grid-3-col gap-medium scroll-reveal" data-delay="200">
+                    <div class="testimonial-card scroll-reveal-item" data-delay="300">
+                        <p class="quote">"BrightSide News is my go-to for a positive start to the day. It's a refreshing change from the usual news cycle!"</p>
+                        <p class="author">- Alex B., New York</p>
+                    </div>
+                    <div class="testimonial-card scroll-reveal-item" data-delay="500">
+                        <p class="quote">"I love the variety of stories and the focus on uplifting content. It genuinely makes me feel more optimistic."</p>
+                        <p class="author">- Maria G., Florida</p>
+                    </div>
+                    <div class="testimonial-card scroll-reveal-item" data-delay="700">
+                        <p class="quote">"Finally, a news source that leaves me feeling inspired instead of anxious. Highly recommend!"</p>
+                        <p class="author">- David K., Texas</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="signup" class="py-section">
+            <div class="container text-center">
+                <h2 class="section-title scroll-reveal">Join BrightSide News - It's Free!</h2>
+                <p class="scroll-reveal" data-delay="100">Subscribe to get your daily dose of positivity delivered straight to your inbox.</p>
+                <form id="signup-form" class="signup-form scroll-reveal" data-delay="300" action="YOUR_N8N_WEBHOOK_URL_OR_ESP_ENDPOINT" method="POST" novalidate>
+                    <div class="form-group">
+                        <label for="signup-email">Email Address</label>
+                        <input type="email" id="signup-email" name="email" required placeholder="you@example.com">
+                        <small class="form-error-message" aria-live="polite"></small>
+                    </div>
+                    <div class="form-group">
+                        <label for="signup-state">State (US)</label>
+                        <select id="signup-state" name="state" required>
+                            <option value="">Select State</option>
+                            <option value="AL">Alabama</option>
+                            <option value="AK">Alaska</option>
+                            <option value="AZ">Arizona</option>
+                            <option value="AR">Arkansas</option>
+                            <option value="CA">California</option>
+                            <option value="NY">New York</option>
+                            <option value="TX">Texas</option>
+                            <option value="FL">Florida</option>
+                            <!-- Add other states as needed -->
+                        </select>
+                        <small class="form-error-message" aria-live="polite"></small>
+                    </div>
+                    <button type="submit" class="submit-button">Subscribe for Free Good News!</button>
+                    <p id="signup-form-feedback" class="form-feedback-message" aria-live="polite"></p>
+                    <p class="privacy-note">We respect your privacy. Unsubscribe anytime.</p>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer scroll-reveal">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h4>BrightSide News</h4>
+                    <p>Spreading Positivity, One Story at a Time.</p>
+                    <button class="cta-button-secondary" data-modal-trigger="contactModal">Contact Us</button>
+                </div>
+                <div class="footer-column">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#about">About Us</a></li>
+                        <li><a href="#how-it-works">How It Works</a></li>
+                        <li><a href="#signup">Sign Up</a></li>
+                        <li><a href="privacy-policy.html">Privacy Policy</a></li> <li><a href="terms-of-service.html">Terms of Service</a></li> </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Share the BrightSide</h4>
+                    <div class="social-links">
+                        <a href="https://twitter.com/intent/tweet?url=YOUR_WEBSITE_URL&text=Check%20out%20BrightSide%20News%20for%20positive%20stories!" target="_blank" rel="noopener noreferrer" aria-label="Share on Twitter">
+                            <svg viewBox="0 0 24 24" fill="currentColor" width="24" height="24"><path d="M22.46 6c-.77.35-1.6.58-2.46.67.9-.53 1.59-1.37 1.92-2.38-.84.5-1.78.86-2.79 1.07A4.48 4.48 0 0015.65 4c-2.35 0-4.27 1.92-4.27 4.29 0 .34.04.67.11.98C7.38 9.06 4.26 7.38 2.18 4.84c-.35.6-.55 1.3-.55 2.04 0 1.49.76 2.8 1.91 3.56-.71 0-1.37-.22-1.95-.5v.03c0 2.08 1.48 3.82 3.44 4.21a4.22 4.22 0 01-1.94.07 4.28 4.28 0 004 2.98 8.521 8.521 0 01-5.33 1.84c-.34 0-.68-.02-1.01-.06C3.08 19.45 5.28 20 7.72 20c7.21 0 11.14-5.82 11.14-10.89 0-.16 0-.33-.01-.49.77-.55 1.44-1.23 1.97-2.01z"></path></svg>
+                        </a>
+                        <a href="https://www.facebook.com/sharer/sharer.php?u=YOUR_WEBSITE_URL" target="_blank" rel="noopener noreferrer" aria-label="Share on Facebook">
+                            <svg viewBox="0 0 24 24" fill="currentColor" width="24" height="24"><path d="M12 2.04C6.48 2.04 2 6.52 2 12.06c0 4.98 3.66 9.12 8.44 9.86v-6.97H7.97v-2.89h2.47V9.54c0-2.45 1.44-3.8 3.67-3.8 1.05 0 2.14.19 2.14.19v2.47h-1.27c-1.2 0-1.58.73-1.58 1.51v1.83h2.78l-.45 2.89h-2.33v6.97C18.34 21.18 22 17.04 22 12.06c0-5.54-4.48-10.02-10-10.02z"></path></svg>
+                        </a>
+                        <a href="https://www.linkedin.com/shareArticle?mini=true&url=YOUR_WEBSITE_URL&title=BrightSide%20News&summary=Positive%20News" target="_blank" rel="noopener noreferrer" aria-label="Share on LinkedIn">
+                            <svg viewBox="0 0 24 24" fill="currentColor" width="24" height="24"><path d="M6.5 21.5h-5v-13h5v13zM4 6.5C2.5 6.5 1.5 5.3 1.5 4s1-2.4 2.5-2.4c1.6 0 2.5 1 2.5 2.4C6.5 5.3 5.5 6.5 4 6.5zm15.5 15h-5v-6.6c0-1.8-.4-3-2.3-3c-1.6 0-2.2.9-2.2 3V21.5h-5v-13h5V10s.7-1.2 2.6-1.2c2.9 0 5.4 1.5 5.4 6.2V21.5z"></path></svg>
+                        </a>
+                        <a href="mailto:?subject=Check%20out%20BrightSide%20News&body=I%20found%20this%20great%20source%20for%20positive%20news%3A%20YOUR_WEBSITE_URL" aria-label="Share via Email">
+                            <svg viewBox="0 0 24 24" fill="currentColor" width="24" height="24"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"></path></svg>
+                        </a>
+                        </div>
+                </div>
+            </div>
+            <div class="footer-bottom text-center">
+                <p>© <span id="current-year"></span> BrightSide News. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <div id="contactModal" class="modal" aria-labelledby="contactModalTitle" aria-describedby="contactModalDescription" aria-hidden="true" role="dialog">
+        <div class="modal-overlay" tabindex="-1" data-modal-close="contactModal"></div>
+        <div class="modal-content" role="document">
+            <button class="modal-close" aria-label="Close contact modal" data-modal-close="contactModal">×</button>
+            <h3 id="contactModalTitle" class="modal-title">Contact Us</h3>
+            <p id="contactModalDescription" class="visually-hidden">Use this form to send us a message.</p>
+            <form id="contact-form" novalidate>
+                <div class="form-group">
+                    <label for="contact-name">Name</label>
+                    <input type="text" id="contact-name" name="name" required placeholder="Your Name">
+                    <small class="form-error-message" aria-live="polite"></small>
+                </div>
+                <div class="form-group">
+                    <label for="contact-email">Email</label>
+                    <input type="email" id="contact-email" name="email" required placeholder="you@example.com">
+                    <small class="form-error-message" aria-live="polite"></small>
+                </div>
+                <div class="form-group">
+                    <label for="contact-message">Message</label>
+                    <textarea id="contact-message" name="message" rows="5" required placeholder="Your message..."></textarea>
+                    <small class="form-error-message" aria-live="polite"></small>
+                </div>
+                <button type="submit" class="submit-button">Send Message</button>
+                <p id="contact-form-feedback" class="form-feedback-message" aria-live="polite"></p>
+            </form>
+            <p class="alternative-contact">Or email us at: <a href="mailto:support@brightsidenews.example.com">support@brightsidenews.example.com</a></p>
+        </div>
+    </div>
+
+    <div id="custom-cursor"></div> <!-- << NEW HTML: CUSTOM CURSOR -->
+
+    <script>
+    // Unobtrusive JavaScript, executed after DOM is fully loaded
+    document.addEventListener('DOMContentLoaded', () => {
+
+        // --- Configuration ---
+        const FIXED_NAVBAR_HEIGHT = parseInt(getComputedStyle(document.documentElement).getPropertyValue('--navbar-height')) || 70;
+
+        // --- Smooth Scrolling ---
+        const navLinks = document.querySelectorAll('a[href^="#"]');
+        navLinks.forEach(link => {
+            link.addEventListener('click', function(e) {
+                const href = this.getAttribute('href');
+                if (href.startsWith('#') && href.length > 1 && !this.dataset.modalTrigger) {
+                    e.preventDefault();
+                    const targetId = href.substring(1);
+                    const targetElement = document.getElementById(targetId);
+
+                    if (targetElement) {
+                        const elementPosition = targetElement.getBoundingClientRect().top;
+                        const offsetPosition = elementPosition + window.pageYOffset - FIXED_NAVBAR_HEIGHT;
+
+                        window.scrollTo({
+                            top: offsetPosition,
+                            behavior: 'smooth'
+                        });
+
+                        if (navToggle && navToggle.classList.contains('active') && this.closest('.nav-menu-container')) {
+                            closeMobileMenu();
+                        }
+                        updateActiveNavLink(this);
+                    }
+                }
+            });
+        });
+        
+        function updateActiveNavLink(activeLink) {
+            document.querySelectorAll('.nav-link').forEach(link => link.classList.remove('active'));
+            if (activeLink) activeLink.classList.add('active');
+        }
+
+        const sections = document.querySelectorAll('main section[id]');
+        function throttle(func, limit) {
+            let inThrottle;
+            return function() {
+                const args = arguments;
+                const context = this;
+                if (!inThrottle) {
+                    func.apply(context, args);
+                    inThrottle = true;
+                    setTimeout(() => inThrottle = false, limit);
+                }
+            }
+        }
+
+        const handleScrollActiveNav = () => {
+            let currentSectionId = '';
+            let minDistance = Infinity;
+            const viewportCenter = window.pageYOffset + (window.innerHeight / 2);
+
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop - FIXED_NAVBAR_HEIGHT;
+                const sectionBottom = sectionTop + section.offsetHeight;
+                
+                // Check if section is in viewport or is the closest to the center
+                if (window.pageYOffset >= sectionTop - window.innerHeight / 2 && window.pageYOffset < sectionBottom - window.innerHeight / 2) {
+                     const distanceToCenter = Math.abs(sectionTop + (section.offsetHeight / 2) - viewportCenter);
+                     if (distanceToCenter < minDistance) {
+                         minDistance = distanceToCenter;
+                         currentSectionId = section.getAttribute('id');
+                     }
+                }
+            });
+            
+            if (!currentSectionId && window.pageYOffset < sections[0].offsetTop - FIXED_NAVBAR_HEIGHT - 50) {
+                 currentSectionId = 'home';
+            }
+            
+            if ((window.innerHeight + window.pageYOffset) >= document.body.offsetHeight - 100 && sections.length > 0) {
+                currentSectionId = sections[sections.length - 1].id;
+            }
+
+            document.querySelectorAll('.nav-link').forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === `#${currentSectionId}`) {
+                    link.classList.add('active');
+                }
+            });
+        };
+        window.addEventListener('scroll', throttle(handleScrollActiveNav, 100));
+        handleScrollActiveNav(); // Initial check
+
+
+        // --- Mobile Menu Toggle ---
+        const navToggle = document.querySelector('.nav-toggle');
+        const navMenu = document.querySelector('.nav-menu-container');
+        const mainNav = document.getElementById('main-nav');
+
+        if (navToggle && navMenu) {
+            navToggle.addEventListener('click', () => {
+                const isExpanded = navToggle.getAttribute('aria-expanded') === 'true' || false;
+                navToggle.setAttribute('aria-expanded', !isExpanded);
+                navToggle.classList.toggle('active');
+                navMenu.classList.toggle('active');
+                if (mainNav) mainNav.classList.toggle('menu-open');
+                document.body.classList.toggle('no-scroll', navMenu.classList.contains('active'));
+            });
+        }
+        
+        function closeMobileMenu() {
+            if (navToggle && navMenu && navToggle.classList.contains('active')) {
+                navToggle.setAttribute('aria-expanded', 'false');
+                navToggle.classList.remove('active');
+                navMenu.classList.remove('active');
+                if (mainNav) mainNav.classList.remove('menu-open');
+                document.body.classList.remove('no-scroll');
+            }
+        }
+
+        // --- Dynamic Tagline ---
+        const taglineElement = document.getElementById('dynamic-tagline-text');
+        if (taglineElement) {
+            const taglines = [
+                "Start Your Day Bright",
+                "Your Daily Dose of Positivity",
+                "Good News, Delivered.",
+                "Focus on the Good Stuff",
+                "Inspiring Stories, Daily"
+            ];
+            let taglineIndex = 0;
+            setInterval(() => {
+                taglineElement.style.opacity = 0;
+                setTimeout(() => {
+                    taglineIndex = (taglineIndex + 1) % taglines.length;
+                    taglineElement.textContent = taglines[taglineIndex];
+                    taglineElement.style.opacity = 1;
+                }, 500);
+            }, 3500);
+        }
+
+        // --- Modal Interaction ---
+        const modalTriggers = document.querySelectorAll('[data-modal-trigger]');
+        const modalCloseButtons = document.querySelectorAll('[data-modal-close]');
+        let previouslyFocusedElement = null;
+
+        function openModal(modalId) {
+            const modal = document.getElementById(modalId);
+            if (!modal) return;
+
+            previouslyFocusedElement = document.activeElement;
+            modal.style.display = 'flex';
+            setTimeout(() => modal.classList.add('visible'), 10);
+            modal.setAttribute('aria-hidden', 'false');
+            document.body.classList.add('no-scroll-modal');
+
+            const focusableElements = modal.querySelectorAll(
+                'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])'
+            );
+            const firstFocusableElement = focusableElements[0];
+            const lastFocusableElement = focusableElements[focusableElements.length - 1];
+
+            if (firstFocusableElement) firstFocusableElement.focus();
+
+            modal.addEventListener('keydown', (e) => {
+                if (e.key === 'Tab') {
+                    if (e.shiftKey) {
+                        if (document.activeElement === firstFocusableElement) {
+                            lastFocusableElement.focus();
+                            e.preventDefault();
+                        }
+                    } else {
+                        if (document.activeElement === lastFocusableElement) {
+                            firstFocusableElement.focus();
+                            e.preventDefault();
+                        }
+                    }
+                }
+            });
+        }
+
+        function closeModal(modalId) {
+            const modal = document.getElementById(modalId);
+            if (!modal) return;
+
+            modal.classList.remove('visible');
+            setTimeout(() => {
+                 modal.style.display = 'none';
+            }, 300);
+            modal.setAttribute('aria-hidden', 'true');
+            document.body.classList.remove('no-scroll-modal');
+
+            if (previouslyFocusedElement) {
+                previouslyFocusedElement.focus();
+                previouslyFocusedElement = null;
+            }
+        }
+
+        modalTriggers.forEach(trigger => {
+            trigger.addEventListener('click', (e) => {
+                e.preventDefault();
+                const modalId = trigger.dataset.modalTrigger || (trigger.getAttribute('href') ? trigger.getAttribute('href').substring(1) : null);
+                if(modalId) openModal(modalId);
+            });
+        });
+
+        modalCloseButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                const modalId = button.dataset.modalClose || (button.closest('.modal') ? button.closest('.modal').id : null);
+                 if(modalId) closeModal(modalId);
+            });
+        });
+
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') {
+                const openModalElement = document.querySelector('.modal.visible');
+                if (openModalElement) {
+                    closeModal(openModalElement.id);
+                }
+            }
+        });
+
+        document.querySelectorAll('.modal-overlay').forEach(overlay => {
+            overlay.addEventListener('click', () => {
+                 const modalId = overlay.closest('.modal') ? overlay.closest('.modal').id : null;
+                 if(modalId) closeModal(modalId);
+            });
+        });
+
+        // --- Scroll-Reveal Animations ---
+        const revealElements = document.querySelectorAll('.scroll-reveal, .scroll-reveal-item');
+        const revealObserver = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const delay = parseInt(entry.target.dataset.delay) || 0;
+                    setTimeout(() => {
+                        entry.target.classList.add('is-visible');
+                    }, delay);
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.1 });
+
+        revealElements.forEach(el => {
+            revealObserver.observe(el);
+        });
+
+        // --- Form Validation (Client-Side Demo) ---
+        function getLabelText(field) {
+            const label = document.querySelector(`label[for="${field.id}"]`);
+            return label ? label.textContent.trim() : null;
+        }
+
+        function showError(field, message) {
+            const formGroup = field.closest('.form-group');
+            if (!formGroup) return;
+            formGroup.classList.add('error');
+            const errorElement = formGroup.querySelector('.form-error-message');
+            if (errorElement) {
+                errorElement.textContent = message;
+            }
+        }
+
+        function clearAllErrors(form) {
+            const errorMessages = form.querySelectorAll('.form-error-message');
+            errorMessages.forEach(el => el.textContent = '');
+            const errorGroups = form.querySelectorAll('.form-group.error');
+            errorGroups.forEach(el => el.classList.remove('error'));
+        }
+
+        function isValidEmail(email) {
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            return emailRegex.test(email);
+        }
+        
+        function handleFormSubmission(formId, feedbackElementId) {
+            const form = document.getElementById(formId);
+            const feedbackElement = document.getElementById(feedbackElementId);
+
+            if (!form || !feedbackElement) return;
+
+            form.addEventListener('submit', function(e) {
+                e.preventDefault();
+                clearAllErrors(form);
+                feedbackElement.textContent = '';
+                feedbackElement.className = 'form-feedback-message';
+
+                let isValid = true;
+                const requiredFields = form.querySelectorAll('[required]');
+                requiredFields.forEach(field => {
+                    if (!field.value.trim()) {
+                        isValid = false;
+                        showError(field, `${getLabelText(field) || field.name} is required.`);
+                    } else if (field.type === 'email' && !isValidEmail(field.value.trim())) {
+                        isValid = false;
+                        showError(field, 'Please enter a valid email address.');
+                    }
+                });
+
+                if (isValid) {
+                    feedbackElement.textContent = 'Thank you! Your submission was successful.';
+                    feedbackElement.classList.add('success');
+                    
+                    // !!! INTEGRATED CONFETTI CALL for signup form !!!
+                    if (form.id === 'signup-form') {
+                        const submitButton = form.querySelector('button[type="submit"], .submit-button');
+                        if (submitButton) {
+                            triggerConfettiEffect(submitButton);
+                        }
+                    }
+                    form.reset();
+                } else {
+                    feedbackElement.textContent = 'Please correct the errors above.';
+                    feedbackElement.classList.add('error');
+                    const firstErrorField = form.querySelector('.form-group.error input, .form-group.error select, .form-group.error textarea');
+                    if (firstErrorField) firstErrorField.focus();
+                }
+            });
+        }
+
+        handleFormSubmission('signup-form', 'signup-form-feedback');
+        handleFormSubmission('contact-form', 'contact-form-feedback');
+
+        // --- Footer Year ---
+        const currentYearElement = document.getElementById('current-year');
+        if (currentYearElement) {
+            currentYearElement.textContent = new Date().getFullYear();
+        }
+
+        // --- NEW FEATURE 1: Interactive Hero Background ---
+        const heroSection = document.getElementById('home');
+        const heroInteractiveBg = document.getElementById('hero-interactive-background');
+
+        if (heroSection && heroInteractiveBg) {
+            const parallaxFactor = 0.2; 
+            const mouseMoveFactor = 0.005; 
+            let currentX = 0, currentY = 0;
+            let targetX = 0, targetY = 0;
+            const smoothing = 0.08;
+            let rafIdHero;
+
+            const updateHeroBackground = () => {
+                const scrollOffset = window.pageYOffset;
+                const parallaxOffset = scrollOffset * parallaxFactor;
+
+                currentX += (targetX - currentX) * smoothing;
+                currentY += (targetY - currentY) * smoothing;
+
+                heroInteractiveBg.style.transform = `translate3d(${currentX}px, ${currentY + parallaxOffset}px, 0)`;
+                rafIdHero = requestAnimationFrame(updateHeroBackground);
+            };
+
+            const heroMouseMoveHandler = throttle((e) => {
+                const rect = heroSection.getBoundingClientRect();
+                const x = e.clientX - rect.left;
+                const y = e.clientY - rect.top;
+                const centerX = rect.width / 2;
+                const centerY = rect.height / 2;
+                const maxMove = 20; 
+
+                targetX = Math.max(-maxMove, Math.min(maxMove, (x - centerX) * mouseMoveFactor * -1 * 100));
+                targetY = Math.max(-maxMove, Math.min(maxMove, (y - centerY) * mouseMoveFactor * -1 * 100));
+            }, 30); // Throttle mousemove for performance
+
+            heroSection.addEventListener('mousemove', heroMouseMoveHandler);
+            
+            // Start RAF only if not already started
+            if (!rafIdHero) {
+                rafIdHero = requestAnimationFrame(updateHeroBackground);
+            }
+            // Optional: Stop RAF when element is not in view
+            const heroObserver = new IntersectionObserver(entries => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        if (!rafIdHero) rafIdHero = requestAnimationFrame(updateHeroBackground);
+                    } else {
+                        if (rafIdHero) {
+                            cancelAnimationFrame(rafIdHero);
+                            rafIdHero = null;
+                        }
+                    }
+                });
+            });
+            heroObserver.observe(heroSection);
+        }
+
+        // --- NEW FEATURE 2: Good News Counter Animation ---
+        const goodNewsCounterElement = document.getElementById('good-news-counter');
+        if (goodNewsCounterElement) {
+            const targetValue = parseInt(goodNewsCounterElement.dataset.targetValue, 10) || 0;
+            const animationDuration = 2000;
+
+            const animateCounter = (element, start, end, duration) => {
+                let startTime = null;
+                const step = (timestamp) => {
+                    if (!startTime) startTime = timestamp;
+                    const progress = Math.min((timestamp - startTime) / duration, 1);
+                    element.textContent = Math.floor(progress * (end - start) + start).toLocaleString();
+                    if (progress < 1) {
+                        requestAnimationFrame(step);
+                    } else {
+                        element.textContent = end.toLocaleString();
+                    }
+                };
+                requestAnimationFrame(step);
+            };
+
+            const counterObserver = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        animateCounter(goodNewsCounterElement, 0, targetValue, animationDuration);
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.5 });
+            
+            const counterContainerForObserver = document.getElementById('good-news-counter-container') || goodNewsCounterElement;
+            counterObserver.observe(counterContainerForObserver);
+        }
+
+        // --- NEW FEATURE 3: Subtle "Shine/Gloss" Effect on News Card Hover ---
+        const newsCards = document.querySelectorAll('.news-card');
+        newsCards.forEach(card => {
+            card.addEventListener('mouseenter', () => {
+                card.classList.add('shine-effect');
+            });
+            card.addEventListener('mouseleave', () => {
+                // No timeout needed as CSS transition handles the animation out if :hover is also used or simply removing class works
+                card.classList.remove('shine-effect');
+            });
+        });
+
+        // --- NEW FEATURE 4: Dynamic "Progress Bar" for Page Scroll ---
+        const scrollProgressBar = document.getElementById('scroll-progress-bar');
+        if (scrollProgressBar) {
+            let rafIdScrollProgress;
+            const updateScrollProgress = () => {
+                const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+                const scrollHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+                if (scrollHeight > 0) {
+                    const progressPercentage = (scrollTop / scrollHeight) * 100;
+                    scrollProgressBar.style.width = `${progressPercentage}%`;
+                } else {
+                    scrollProgressBar.style.width = `0%`; // Handle empty or very short pages
+                }
+                rafIdScrollProgress = requestAnimationFrame(updateScrollProgress);
+            };
+             if (document.documentElement.scrollHeight > document.documentElement.clientHeight) {
+                rafIdScrollProgress = requestAnimationFrame(updateScrollProgress);
+            }
+            window.addEventListener('resize', () => { // Re-check on resize
+                if (document.documentElement.scrollHeight <= document.documentElement.clientHeight) {
+                    scrollProgressBar.style.width = '0%';
+                    if (rafIdScrollProgress) {
+                        cancelAnimationFrame(rafIdScrollProgress);
+                        rafIdScrollProgress = null;
+                    }
+                } else if (!rafIdScrollProgress) {
+                     rafIdScrollProgress = requestAnimationFrame(updateScrollProgress);
+                }
+            });
+        }
+
+        // --- NEW FEATURE 5: Interactive "Follow Cursor" Dot/Element ---
+        const customCursor = document.getElementById('custom-cursor');
+        if (customCursor) {
+            let cursorX = 0, cursorY = 0;
+            let targetCursorX = 0, targetCursorY = 0;
+            const cursorSmoothing = 0.15; 
+            let rafIdCursor;
+
+            const updateCustomCursor = () => {
+                cursorX += (targetCursorX - cursorX) * cursorSmoothing;
+                cursorY += (targetCursorY - cursorY) * cursorSmoothing;
+                customCursor.style.transform = `translate3d(${cursorX - customCursor.offsetWidth / 2}px, ${cursorY - customCursor.offsetHeight / 2}px, 0)`;
+                rafIdCursor = requestAnimationFrame(updateCustomCursor);
+            };
+            
+            document.addEventListener('mousemove', (e) => {
+                targetCursorX = e.clientX;
+                targetCursorY = e.clientY;
+                 if (!rafIdCursor && window.matchMedia('(pointer: fine)').matches) { // Start RAF on first move if fine pointer
+                    rafIdCursor = requestAnimationFrame(updateCustomCursor);
+                }
+            });
+
+            // Hide cursor if user leaves window or switches tabs
+            document.addEventListener('mouseleave', () => { customCursor.style.opacity = '0'; });
+            document.addEventListener('mouseenter', () => { customCursor.style.opacity = '0.8'; });
+
+
+            const interactiveElementsForCursor = document.querySelectorAll(
+                'a, button, [data-modal-trigger], .news-card, .cta-button, .submit-button, .nav-link, .logo, .contact-nav-button, .step-card, .about-card, .testimonial-card'
+            );
+            interactiveElementsForCursor.forEach(el => {
+                el.addEventListener('mouseenter', () => customCursor.classList.add('cursor-active'));
+                el.addEventListener('mouseleave', () => customCursor.classList.remove('cursor-active'));
+            });
+             // Only activate for fine pointers (mice), not touch
+            if (!window.matchMedia('(pointer: fine)').matches) {
+                if(customCursor) customCursor.style.display = 'none';
+            }
+        }
+
+        // --- NEW FEATURE 6: "Confetti" on Successful Sign-Up ---
+        // (Function triggerConfettiEffect is called from the modified handleFormSubmission)
+        function triggerConfettiEffect(originElement) {
+            const confettiCount = Math.floor(Math.random() * 50) + 70; // 70-120 particles
+            const confettiColors = [
+                'var(--color-primary)', 'var(--color-secondary)', 'var(--color-accent)',
+                'var(--color-success)', '#e74c3c', '#3498db', '#9b59b6', '#1abc9c'
+            ];
+            const shapes = ['square', 'rectangle', 'circle', 'line']; // Line is a thin rectangle
+
+            const originRect = originElement ? originElement.getBoundingClientRect() : {
+                top: window.innerHeight * 0.8, left: window.innerWidth / 2, width: 0, height: 0
+            };
+
+            for (let i = 0; i < confettiCount; i++) {
+                const particle = document.createElement('div');
+                particle.classList.add('confetti-particle');
+                
+                const shape = shapes[Math.floor(Math.random() * shapes.length)];
+                if (shape === 'rectangle') {
+                    particle.style.width = `${Math.random() * 6 + 4}px`; // 4-10px wide
+                    particle.style.height = `${Math.random() * 10 + 8}px`; // 8-18px tall
+                } else if (shape === 'circle') {
+                    const size = Math.random() * 6 + 6; // 6-12px diameter
+                    particle.style.width = `${size}px`;
+                    particle.style.height = `${size}px`;
+                    particle.style.borderRadius = '50%';
+                } else if (shape === 'line') {
+                     particle.style.width = `${Math.random() * 2 + 1}px`; // 1-3px wide
+                     particle.style.height = `${Math.random() * 15 + 10}px`; // 10-25px tall
+                } else { // square
+                    const size = Math.random() * 6 + 6;
+                    particle.style.width = `${size}px`;
+                    particle.style.height = `${size}px`;
+                }
+                particle.style.backgroundColor = confettiColors[Math.floor(Math.random() * confettiColors.length)];
+                
+                const startX = originRect.left + (originRect.width / 2) + (Math.random() - 0.5) * originRect.width * 0.8;
+                const startY = originRect.top + (originRect.height / 2) + (Math.random() - 0.5) * originRect.height * 0.5;
+                particle.style.left = `${startX}px`;
+                particle.style.top = `${startY}px`;
+
+                document.body.appendChild(particle);
+
+                const angle = (Math.random() - 0.5) * Math.PI * 0.8 - Math.PI / 2; // Upwards burst cone
+                const velocity = 8 + Math.random() * 12; // Initial burst velocity
+                const gravity = 0.15 + Math.random() * 0.1;
+                const drag = 0.985;
+                let vx = Math.cos(angle) * velocity;
+                let vy = Math.sin(angle) * velocity;
+
+                const initialRotation = Math.random() * 360;
+                const rotationSpeed = (Math.random() - 0.5) * 30; // Degrees per frame
+                
+                let currentOpacity = 1;
+                const fadeOutStart = 1500 + Math.random() * 1000; // Start fading after 1.5-2.5s
+                const totalDuration = fadeOutStart + 1000; // Fade out over 1s
+
+                let currentX = 0; // Relative to startX
+                let currentY = 0; // Relative to startY
+                let currentRot = initialRotation;
+
+                let particleTime = 0;
+                let lastTimestamp = performance.now();
+
+                const animateParticle = (timestamp) => {
+                    const deltaTime = (timestamp - lastTimestamp) / (1000/60); // Normalize to 60fps
+                    lastTimestamp = timestamp;
+                    particleTime += deltaTime * (1000/60);
+
+
+                    vy += gravity * deltaTime;
+                    vx *= Math.pow(drag, deltaTime);
+                    vy *= Math.pow(drag, deltaTime);
+
+                    currentX += vx * deltaTime;
+                    currentY += vy * deltaTime;
+                    currentRot += rotationSpeed * deltaTime;
+
+                    if (particleTime > fadeOutStart) {
+                        currentOpacity = Math.max(0, 1 - ((particleTime - fadeOutStart) / (totalDuration - fadeOutStart)));
+                    }
+                    
+                    particle.style.transform = `translate3d(${currentX}px, ${currentY}px, 0) rotateZ(${currentRot}deg)`;
+                    particle.style.opacity = currentOpacity;
+
+                    if (particleTime < totalDuration && currentY < window.innerHeight - startY + 50) { // Remove if off-screen
+                        requestAnimationFrame(animateParticle);
+                    } else {
+                        if (particle.parentNode) {
+                            particle.parentNode.removeChild(particle);
+                        }
+                    }
+                };
+                requestAnimationFrame(animateParticle);
+            }
+        }
+
+    }); // End DOMContentLoaded
+    </script>
+</body>
+</html>
